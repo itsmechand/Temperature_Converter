@@ -1,9 +1,9 @@
 # Temperature_Converter
 
 
-Tempoc is a simple and user-friendly web-based temperature converter that allows you to easily convert temperatures between different units. Whether you need to convert Celsius to Fahrenheit, Kelvin.
+It is a simple and user-friendly web-based temperature converter that allows you to easily convert temperatures between different units. Whether you need to convert Celsius to Fahrenheit, Celsius to Kelvin, Fahrenheit to Celsius , Fahrenheit to Kelvin , Kelvin to Celsius , Kelvin to Fahrenheit .
 
-Tempoc was built using HTML, CSS, and JavaScript.
+Temperature Converter was built using HTML, CSS, and JavaScript.
 
 # Features
 
