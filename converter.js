@@ -1,32 +1,34 @@
-let celciusidEl=document.getElementById("celciusid")
-let fahrenheatidEl=document.getElementById("Fahrenheatid")
-let KelvinidEl = document.getElementById("Kelvinid")
-let clearbtnidEl=document.getElementById("clearbtnid")
+function convertTemperature() {
+  const temperature = parseFloat(document.getElementById('temperature').value);
+  const conversion = document.getElementById('conversion').value;
+  let result = '';
 
-function roundnum(num){
-    return Math.round(num*100)/100
-}
+  if (isNaN(temperature)) {
+    result = '⚠️ Please Enter a Valid Number.';
+  } else {
+    switch (conversion) {
+      case 'c-to-f':
+        result = `🌡️ ${temperature}°C is ${(temperature * 9/5 + 32).toFixed(2)}°F`;
+        break;
+      case 'f-to-c':
+        result = `🌡️ ${temperature}°F is ${((temperature - 32) * 5/9).toFixed(2)}°C`;
+        break;
+      case 'c-to-k':
+        result = `🌡️ ${temperature}°C is ${(temperature + 273.15).toFixed(2)}K`;
+        break;
+      case 'k-to-c':
+        result = `🌡️ ${temperature}K is ${(temperature - 273.15).toFixed(2)}°C`;
+        break;
+      case 'f-to-k':
+        result = `🌡️ ${temperature}°F is ${(((temperature - 32) * 5/9) + 273.15).toFixed(2)}K`;
+        break;
+      case 'k-to-f':
+        result = `🌡️ ${temperature}K is ${((temperature - 273.15) * 9/5 + 32).toFixed(2)}°F`;
+        break;
+      default:
+        result = 'Invalid conversion selected.';
+    }
+  }
 
-celciusidEl.addEventListener('input',function(){
-    let numcelcius=parseFloat(celciusidEl.value)
-    fahrenheatidEl.value=roundnum((numcelcius*(9/5))+32)
-    KelvinidEl.value=roundnum(numcelcius+273.15)
-})
-
-fahrenheatidEl.addEventListener('input',function(){
-    let numfarhenheit=parseFloat(fahrenheatidEl.value)
-    celciusidEl.value=roundnum((numfarhenheat-32)*(5/9))
-    KelvinidEl.value=roundnum((numfarhenheat-32)*(5/9)+(273.15))
-})
-
-KelvinidEl.addEventListener('input',function(){
-    let numkelvin=parseFloat(KelvinidEl.value)
-    fahrenheatidEl.value=roundnum((numkelvin - 273.15) * (9/5) + 32)
-    celciusidEl.value=roundnum(numkelvin - 273.15)
-})
-
-function clearbtn(){
-    celciusidEl.value = ""
-    fahrenheatidEl.value=""
-    KelvinidEl.value=""
+  document.getElementById('result').innerText = result;
 }
