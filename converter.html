@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="converter.css">
-    </head>
-    <body>
-        <div class="card">
-            <h1>Temperature Converter</h1>
-            <div id="celsius">
-                <input placeholder="Celcius" class="inputbg" type="number" id="celciusid">
-                <span class="icon">&#8451</span>
-            </div>
-            <div id="fahrenheat">
-                <input placeholder="Fahrenheat" class="inputbg" type="number" id="Fahrenheatid">
-                <span class="icon">&#8457
-                </span>
-            </div>
-            <div id="kelvin">
-                <input placeholder="Kelvin" class="inputbg" type="number" id="Kelvinid">
-                <span class="icon">&#8490
-                </span>
-            </div>
-            <div>
-               <button class="button" id="clearbtnid" onclick="clearbtn()">All Clear</button>
-            </div>
-
-        </div>
-        <script src="converter.js"></script>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="converter.css">
+</head>
+<body>
+  <div class="overlay">
+    <div class="converter">
+      <h1>🌡️ Temperature Converter</h1>
+      <label for="temperature">Enter Temperature:</label>
+      <input type="number" id="temperature" placeholder="Enter value">
+      
+      <label for="conversion">Select Conversion:</label>
+      <select id="conversion">
+        <option value="c-to-f">Celsius to Fahrenheit</option>
+        <option value="f-to-c">Fahrenheit to Celsius</option>
+        <option value="c-to-k">Celsius to Kelvin</option>
+        <option value="k-to-c">Kelvin to Celsius</option>
+        <option value="f-to-k">Fahrenheit to Kelvin</option>
+        <option value="k-to-f">Kelvin to Fahrenheit</option>
+      </select>
+      
+      <button onclick="convertTemperature()">Convert</button>
+      
+      <h2 id="result"></h2>
+    </div>
+  </div>
+  <script src="converter.js"></script>
+</body>
 </html>
